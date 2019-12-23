@@ -1,0 +1,19 @@
+{
+  "name": "defang-refang",
+  "version": "0.0.1",
+  "description": "Fanging dangerous stuff",
+  "main": "index.js",
+  "repository": "github.com/odinodin/defangrefang",
+  "author": "Odin Standal",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "typescript": "3.7.4",
+    "@types/jest": "24.0.24",
+    "ts-jest": "24.2.0",
+    "jest": "24.9.0"
+  }
+}
