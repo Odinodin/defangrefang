@@ -1,6 +1,6 @@
 {
   "name": "defang-refang",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fanging dangerous stuff",
   "main": "dist/defangrefang.js",
   "repository": {
