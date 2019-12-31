@@ -10,7 +10,7 @@ Defang and fang your dangerous URLs, IPs and emails! No dependencies, you only g
 # Usage
 
 ```typescript
-import * as dr from "./defangrefang";
+import dr from "./defangrefang";
 
 dr.defang("http://dr.evils.lair/");
 
