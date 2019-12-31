@@ -1,9 +1,11 @@
 # Defang! Refang!
 Defang and fang your dangerous URLs, IPs and emails! No dependencies, you only get the dentist.
 
+<a href="https://www.npmjs.com/package/defang-refang"><img src="https://img.shields.io/npm/v/defang-refang.svg?style=flat" alt="npm version"></a>
+
 # Install
 
-Add `"url-dentist" : "0.0.1"` to your dependencies.
+`$ npm install defang-refang`
 
 # Usage
 

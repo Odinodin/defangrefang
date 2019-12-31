@@ -1,9 +1,12 @@
 {
   "name": "defang-refang",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fanging dangerous stuff",
-  "main": "index.js",
-  "repository": "github.com/odinodin/defangrefang",
+  "main": "dist/defangrefang.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odinodin/defangrefang"
+  },
   "author": "Odin Standal",
   "license": "MIT",
   "scripts": {
