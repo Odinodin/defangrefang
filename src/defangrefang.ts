@@ -1,5 +1,8 @@
 const defangRules: Array<[RegExp, string]> = [
     [/^http/, 'hXXp'],
+    [/^ftp/, 'fXp'],
+    [/^ssh/, 'sXh'],
+
     // Emails
     [/(\w|[À-ÿ])(@)(\w|[À-ÿ])/gi, '$1[at]$3'],
     // URLs
@@ -10,6 +13,9 @@ const defangRules: Array<[RegExp, string]> = [
 
 const refangRules: Array<[RegExp, string]> = [
     [/^hXXp/i, 'http'],
+    [/^fXp/i, 'ftp'],
+    [/^sXh/i, 'ssh'],
+
     // Emails
     [/\[at\]/gi, '@'],
     // ips + urls

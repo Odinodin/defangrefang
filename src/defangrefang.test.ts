@@ -1,6 +1,6 @@
 import dr from "./defangrefang";
 
-test('can handle http and https', () => {
+test('can handle prefixes', () => {
     const domain = 'http://we-are-evil.com';
     const defangedDomain = "hXXp://we-are-evil[.]com";
 
@@ -12,6 +12,18 @@ test('can handle http and https', () => {
 
     expect(dr.defang(https)).toBe(defangedHttps);
     expect(dr.refang(defangedHttps)).toBe(https);
+
+    const ftp = "ftp://please.download.free.stuffs";
+    const defangedFtp = "fXp://please[.]download[.]free[.]stuffs";
+
+    expect(dr.defang(ftp)).toBe(defangedFtp);
+    expect(dr.refang(defangedFtp)).toBe(ftp);
+
+    const ssh = "ssh://localhost";
+    const defangedSsh = "sXh://localhost";
+
+    expect(dr.defang(ssh)).toBe(defangedSsh);
+    expect(dr.refang(defangedSsh)).toBe(ssh);
 });
 
 test('can handle domains', () => {
