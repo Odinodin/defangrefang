@@ -33,3 +33,9 @@ Handles the following:
     * https
     * ssh
 
+| Argument                | Defanged                    |
+|:------------------------|:----------------------------|
+|faust@evil.com           |faust[at]evil[.]com          |
+|192.168.1.1              |192[.]168[.]1[.]1            |
+|https://totally.legit.com|hXXps://totally[.]legit[.]com|
+
