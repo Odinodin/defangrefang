@@ -1,29 +1,17 @@
 import dr from "./defangrefang";
 
 test('can handle prefixes', () => {
-    const domain = 'http://we-are-evil.com';
-    const defangedDomain = "hXXp://we-are-evil[.]com";
 
-    expect(dr.defang(domain)).toBe(defangedDomain);
-    expect(dr.refang(defangedDomain)).toBe(domain);
+    const prefixes = [
+        {danger: 'http://we-are-evil.com', defanged: 'hXXp://we-are-evil[.]com'},
+        {danger: 'https://we-are-evil.com', defanged: 'hXXps://we-are-evil[.]com'},
+        {danger: 'ssh://localhost', defanged: 'sXh://localhost'},
+        {danger: 'ftp://please.download.free.stuffs', defanged: 'fXp://please[.]download[.]free[.]stuffs'}];
 
-    const https = "https://we-are-evil.com";
-    const defangedHttps = "hXXps://we-are-evil[.]com";
-
-    expect(dr.defang(https)).toBe(defangedHttps);
-    expect(dr.refang(defangedHttps)).toBe(https);
-
-    const ftp = "ftp://please.download.free.stuffs";
-    const defangedFtp = "fXp://please[.]download[.]free[.]stuffs";
-
-    expect(dr.defang(ftp)).toBe(defangedFtp);
-    expect(dr.refang(defangedFtp)).toBe(ftp);
-
-    const ssh = "ssh://localhost";
-    const defangedSsh = "sXh://localhost";
-
-    expect(dr.defang(ssh)).toBe(defangedSsh);
-    expect(dr.refang(defangedSsh)).toBe(ssh);
+    prefixes.forEach(({danger, defanged}) => {
+        expect(dr.defang(danger)).toBe(defanged);
+        expect(dr.refang(defanged)).toBe(danger);
+    });
 });
 
 test('can handle domains', () => {
